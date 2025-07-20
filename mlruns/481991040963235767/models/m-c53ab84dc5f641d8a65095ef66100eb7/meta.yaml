@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/models/m-c53ab84dc5f641d8a65095ef66100eb7/artifacts
+creation_timestamp: 1753053944226
+experiment_id: '481991040963235767'
+last_updated_timestamp: 1753053949948
+model_id: m-c53ab84dc5f641d8a65095ef66100eb7
+model_type: null
+name: linearregression
+source_run_id: adc79ac4e7d2438ea94993f2859f3ae6
+status: 2
+status_message: null

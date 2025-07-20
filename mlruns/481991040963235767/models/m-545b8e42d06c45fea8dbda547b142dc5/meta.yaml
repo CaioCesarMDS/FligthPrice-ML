@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/models/m-545b8e42d06c45fea8dbda547b142dc5/artifacts
+creation_timestamp: 1753055302471
+experiment_id: '481991040963235767'
+last_updated_timestamp: 1753055306103
+model_id: m-545b8e42d06c45fea8dbda547b142dc5
+model_type: null
+name: histgradientboosting
+source_run_id: 804952752e8c45bb929ea6c30c6dce65
+status: 2
+status_message: null

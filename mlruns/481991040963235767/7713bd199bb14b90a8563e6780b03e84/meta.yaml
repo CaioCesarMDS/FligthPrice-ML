@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/7713bd199bb14b90a8563e6780b03e84/artifacts
+end_time: 1753054336356
+entry_point_name: ''
+experiment_id: '481991040963235767'
+lifecycle_stage: active
+run_id: 7713bd199bb14b90a8563e6780b03e84
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753053980461
+status: 3
+tags: []
+user_id: caioc

@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/models/m-7615acd4958d4fa9856fe71e69caadce/artifacts
+creation_timestamp: 1753053969608
+experiment_id: '481991040963235767'
+last_updated_timestamp: 1753053973084
+model_id: m-7615acd4958d4fa9856fe71e69caadce
+model_type: null
+name: knn
+source_run_id: 9244182e04fe4495a9b6d0dda5114c9b
+status: 2
+status_message: null

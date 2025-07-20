@@ -1,0 +1,46 @@
+import numpy as np
+import mlflow
+import mlflow.sklearn
+
+from mlflow.models.signature import infer_signature
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.model_selection import GridSearchCV
+
+def train_models(models, X_train, X_test, y_train, y_test):
+  mlflow.set_experiment("Flight_Price")
+  for model_name, info in models.items():
+    print(f"\nTraining: {model_name}")
+
+    with mlflow.start_run(run_name=model_name):
+      search = GridSearchCV(
+          estimator=info['model'],
+          param_grid=info['params'],
+          cv=3,
+          n_jobs=-1,
+          scoring='neg_root_mean_squared_error',
+      )
+      search.fit(X_train, y_train)
+      best_model = search.best_estimator_
+      best_params = search.best_params_
+
+      y_pred = best_model.predict(X_test)
+      rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+      mae = mean_absolute_error(y_test, y_pred)
+      r2 = r2_score(y_test, y_pred)
+
+      print(f"R2: {r2:.3f}, RMSE: {rmse:.2f}, MAE: {mae:.2f}")
+
+      mlflow.log_param("model_name", model_name)
+      mlflow.log_params(best_params)
+      mlflow.log_metric("rmse", rmse)
+      mlflow.log_metric("mae", mae)
+      mlflow.log_metric("r2", r2)
+      signature = infer_signature(X_train, best_model.predict(X_train))
+      input_example = X_train.iloc[:5]
+
+      mlflow.sklearn.log_model(
+          sk_model=best_model,
+          name=model_name.lower(),
+          signature=signature,
+          input_example=input_example
+      )
