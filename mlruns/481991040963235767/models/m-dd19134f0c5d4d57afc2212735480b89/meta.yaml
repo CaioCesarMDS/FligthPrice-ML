@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/models/m-dd19134f0c5d4d57afc2212735480b89/artifacts
+creation_timestamp: 1753063099432
+experiment_id: '481991040963235767'
+last_updated_timestamp: 1753063102813
+model_id: m-dd19134f0c5d4d57afc2212735480b89
+model_type: null
+name: decisiontree
+source_run_id: 2e126d161c1b4034a073abba2196df40
+status: 2
+status_message: null

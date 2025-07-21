@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/bd5200669c1041cb8adaf289bbbff134/artifacts
+end_time: 1753063523278
+entry_point_name: ''
+experiment_id: '481991040963235767'
+lifecycle_stage: active
+run_id: bd5200669c1041cb8adaf289bbbff134
+run_name: HistGradientBoosting
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753063466488
+status: 3
+tags: []
+user_id: caioc

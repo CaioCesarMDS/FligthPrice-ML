@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/models/m-193d3741929e452cbcda94d5475eb778/artifacts
+creation_timestamp: 1753063264264
+experiment_id: '481991040963235767'
+last_updated_timestamp: 1753063267835
+model_id: m-193d3741929e452cbcda94d5475eb778
+model_type: null
+name: randomforest
+source_run_id: 51ed4347ebf6445795ea5efcfc1277f4
+status: 2
+status_message: null

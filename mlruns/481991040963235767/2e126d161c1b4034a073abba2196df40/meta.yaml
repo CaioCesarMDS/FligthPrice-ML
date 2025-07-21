@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/2e126d161c1b4034a073abba2196df40/artifacts
+end_time: 1753063102824
+entry_point_name: ''
+experiment_id: '481991040963235767'
+lifecycle_stage: active
+run_id: 2e126d161c1b4034a073abba2196df40
+run_name: DecisionTree
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753063097658
+status: 3
+tags: []
+user_id: caioc

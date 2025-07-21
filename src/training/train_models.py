@@ -15,8 +15,8 @@ def train_models(models, X_train, X_test, y_train, y_test):
       search = RandomizedSearchCV(
           estimator=info['model'],
           param_distributions=info['params'],
-          n_iter=20,
-          cv=5,
+          n_iter=100,
+          cv=7,
           n_jobs=-1,
           scoring='neg_root_mean_squared_error',
           random_state=42,

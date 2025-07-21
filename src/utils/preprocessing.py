@@ -36,6 +36,14 @@ def preprocess(dataframe):
 
     df.drop(['Route', 'Additional_Info'], axis=1, inplace=True)
 
+    Q1 = df['Price'].quantile(0.25)
+    Q3 = df['Price'].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_limit = Q1 - 1.5 * IQR
+    upper_limit = Q3 + 1.5 * IQR
+
+    df = df[(df['Price'] >= lower_limit) & (df['Price'] <= upper_limit)]
+
     df = pd.get_dummies(df, drop_first=True)
 
     int_cols = df.select_dtypes(include=['int64']).columns
