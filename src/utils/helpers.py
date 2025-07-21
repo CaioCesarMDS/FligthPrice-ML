@@ -14,10 +14,13 @@ def convert_duration(value):
     return hours * 60 + minutes
 
 def parse_arrival_time(value):
-    try:
-        return pd.to_datetime(value, format="%H:%M %d %b")
-    except:
+    if pd.isna(value):
+        return pd.NaT
+
+    for fmt in ("%H:%M %d %b", "%H:%M"):
         try:
-            return pd.to_datetime(value, format="%H:%M")
-        except:
-            return pd.NaT
+            return pd.to_datetime(value, format=fmt)
+        except ValueError:
+            continue
+
+    return pd.NaT

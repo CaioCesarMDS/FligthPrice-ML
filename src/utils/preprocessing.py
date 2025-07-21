@@ -38,7 +38,7 @@ def preprocess(dataframe):
 
     df = pd.get_dummies(df, drop_first=True)
 
-    for col in df.select_dtypes(include='int64').columns:
-      df[col] = df[col].astype(float)
+    int_cols = df.select_dtypes(include=['int64']).columns
+    df[int_cols] = df[int_cols].astype('float64')
 
     return df

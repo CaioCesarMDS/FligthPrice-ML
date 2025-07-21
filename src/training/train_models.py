@@ -4,7 +4,7 @@ import mlflow.sklearn
 
 from mlflow.models.signature import infer_signature
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import RandomizedSearchCV
 
 def train_models(models, X_train, X_test, y_train, y_test):
   mlflow.set_experiment("Flight_Price")
@@ -12,12 +12,14 @@ def train_models(models, X_train, X_test, y_train, y_test):
     print(f"\nTraining: {model_name}")
 
     with mlflow.start_run(run_name=model_name):
-      search = GridSearchCV(
+      search = RandomizedSearchCV(
           estimator=info['model'],
-          param_grid=info['params'],
-          cv=3,
+          param_distributions=info['params'],
+          n_iter=20,
+          cv=5,
           n_jobs=-1,
           scoring='neg_root_mean_squared_error',
+          random_state=42,
       )
       search.fit(X_train, y_train)
       best_model = search.best_estimator_

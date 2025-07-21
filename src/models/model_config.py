@@ -4,15 +4,12 @@ from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, HistGradientBoostingRegressor
-from sklearn.neural_network import MLPRegressor
-
 
 models = {
     "LinearRegression": {
         "model": LinearRegression(),
         "params": {
             "fit_intercept": [True, False],
-            "n_jobs": [None, -1, 3, 5, 10],
         }
     },
     "KNN": {
