@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/4e7858aae8fa484caf12e7e0a3715b98/artifacts
+end_time: 1753221167701
+entry_point_name: ''
+experiment_id: '481991040963235767'
+lifecycle_stage: active
+run_id: 4e7858aae8fa484caf12e7e0a3715b98
+run_name: LinearRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753221162203
+status: 3
+tags: []
+user_id: root

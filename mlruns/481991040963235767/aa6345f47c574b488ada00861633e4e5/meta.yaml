@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/aa6345f47c574b488ada00861633e4e5/artifacts
+end_time: 1753221192232
+entry_point_name: ''
+experiment_id: '481991040963235767'
+lifecycle_stage: active
+run_id: aa6345f47c574b488ada00861633e4e5
+run_name: KNN
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753221167790
+status: 3
+tags: []
+user_id: root
