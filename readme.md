@@ -1,4 +1,4 @@
-<h1>FlightPrice - Machine Learning</h1>
+<h1>✈️ FlightPrice - Machine Learning</h1>
 
 <h2>Discentes: Caio Cesar, Rodrigo Sena e Vitor Otávio</h2>
 
@@ -6,69 +6,134 @@
 
 <div>
   <h2>📊 Sobre o Projeto</h2>
+
   <p>
-    Este é um projeto de aprendizado de máquina com o objetivo de identificar, entre seis modelos de regressão, aquele que apresenta o melhor desempenho na predição de preços.
+    Este é um projeto de aprendizado de máquina cujo objetivo é identificar, entre seis modelos de regressão, aquele que apresenta o melhor desempenho na predição de preços de passagens aéreas.
   </p>
   
   <p>
-    Os modelos testados foram:
+    Os modelos avaliados foram:
     <strong>LinearRegression</strong>, <strong>KNeighborsRegressor</strong>, <strong>DecisionTreeRegressor</strong>, <strong>RandomForestRegressor</strong>, <strong>GradientBoostingRegressor</strong> e <strong>HistGradientBoostingRegressor</strong>.
   </p>
   
   <p>
-    Foram avaliadas diversas combinações de hiperparâmetros utilizando <strong>RandomizedSearchCV</strong> para otimizar o desempenho de cada modelo.
+    Diversas combinações de hiperparâmetros foram testadas com o <strong>RandomizedSearchCV</strong>, visando a melhor performance possível para cada modelo.
   </p>
   
   <p>
-    O <strong>MLflow</strong> foi utilizado para registrar todos os experimentos e resultados, permitindo a visualização de cada execução, dos hiperparâmetros utilizados e das métricas de avaliação. Isso garante rastreabilidade e controle total do processo de modelagem.
+    Utilizamos o <strong>MLflow</strong> para rastrear os experimentos, armazenar os resultados e permitir a análise detalhada de cada execução — incluindo hiperparâmetros utilizados e métricas de avaliação.
   </p>
   
   <p>
-    As métricas utilizadas para avaliação dos modelos foram:
-    <strong>Root Mean Squared Error (RMSE)</strong>, <strong>Mean Absolute Error (MAE)</strong> e <strong>R² Score (R²)</strong>.
+    As métricas de desempenho aplicadas foram:
+    <strong>Root Mean Squared Error (RMSE)</strong>, <strong>Mean Absolute Error (MAE)</strong> e <strong>R² Score</strong>.
   </p>
 
   <p>
-    O projeto foi conteinerizado com <strong>Docker</strong>, utilizando dois containers: um para o servidor MLflow e outro para a execução do pipeline de treinamento.
+    O projeto foi conteinerizado com <strong>Docker</strong>, utilizando dois containers:
+    um para o servidor MLflow e outro para o script de treinamento e predição.
   </p>
 
   <p>
-    Após o treinamento e a seleção do melhor modelo, é realizada a predição sobre o conjunto de teste, gerando o arquivo <code>test_set_with_predictions.xlsx</code> na pasta <code>data/</code>, com os preços previstos.
+    Após o treinamento e escolha do melhor modelo, é realizada a predição sobre os dados de teste, gerando o arquivo <code>test_set_with_predictions.xlsx</code> na pasta <code>data/</code>.
   </p>
 </div>
 
 <br>
 
-<h1>Instalação / Execução</h1>
-<p>Para executar o projeto localmente, siga estas etapas:</p>
+<div>
+  <h2>🏆 Melhores Resultados de Cada Modelo</h2>
 
-1 - Clone esse repositório em sua máquina local:
-
-```
-git clone https://github.com/CaioCesarMDS/FligthPrice-ML.git
-```
-
-2 - Suba o container com docker:
-
-```
-docker compose up --build
-```
-
-3 - Espere o treinamento do modelo (+ / - 12m): 
-
-
-4 - Abra o servidor do Mlflow no navegador para ver todo os experimentos:
-
-```
-http:localhost:5000
-```
+  <table>
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>R² Score</th>
+      <th>RMSE</th>
+      <th>MAE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LinearRegression</td>
+      <td>0.699</td>
+      <td>2221.78</td>
+      <td>1666.39</td>
+    </tr>
+    <tr>
+      <td>KNeighborsRegressor</td>
+      <td>0.848</td>
+      <td>1575.79</td>
+      <td>855.22</td>
+    </tr>
+    <tr>
+      <td>DecisionTreeRegressor</td>
+      <td>0.878</td>
+      <td>1412.24</td>
+      <td>779.23</td>
+    </tr>
+    <tr>
+      <td>RandomForestRegressor</td>
+      <td>0.917</td>
+      <td>1165.91</td>
+      <td>613.21</td>
+    </tr>
+    <tr>
+      <td>GradientBoostingRegressor</td>
+      <td>0.929</td>
+      <td>1081.43</td>
+      <td>624.73</td>
+    </tr>
+    <tr>
+      <td>HistGradientBoostingRegressor</td>
+      <td>0.933</td>
+      <td>1045.05</td>
+      <td>593.62</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <br>
 
-<h1>Principais bibliotecas e ferramentas Utilizadas</h1>
-<ul>
-  <li>Pandas</li>
-  <li>Scikit_Learn</li>
-  <li>Numpy</li>
-  <li>Mlflow</li>
-</ul>
+<div>
+  <h2>🛠️ Instalação e Execução</h2>
+
+  <p>Siga os passos abaixo para executar o projeto localmente:</p>
+
+  1 - Clone esse repositório em sua máquina local:
+  
+  ```
+  git clone https://github.com/CaioCesarMDS/FligthPrice-ML.git
+  ```
+  
+  2 - Suba o container com docker:
+  
+  ```
+  docker compose up --build
+  ```
+  
+  3 - Espere o treinamento do modelo (+ / - 12m): 
+  
+  
+  4 - Abra o servidor do Mlflow no navegador para ver todo os experimentos:
+  
+  ```
+  http:localhost:5000
+  ```    
+
+</div>
+
+<br>
+
+<div>
+  <h2>📚 Principais Bibliotecas e Ferramentas Utilizadas</h2>
+
+  <ul>
+    <li>Pandas</li>
+    <li>NumPy</li>
+    <li>Scikit-learn</li>
+    <li>MLflow</li>
+    <li>Docker</li>
+  </ul>
+</div>
