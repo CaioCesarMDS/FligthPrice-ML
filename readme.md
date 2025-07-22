@@ -42,6 +42,39 @@
 <br>
 
 <div>
+  <h2>📁 Estrutura do Projeto</h2>
+
+  <pre>
+  .
+  ├── data/
+  │   ├── test_set.xlsx           # Dados de teste utilizados para predição final
+  │   └── train_set.xlsx          # Dados de treino utilizados para treinar os modelos
+  │
+  ├── docker-compose.yaml         # Arquivo de orquestração Docker (MLflow + treinamento)
+  ├── Dockerfile                  # Define a imagem do container para rodar o treinamento
+  ├── readme.md                   # Documentação do projeto
+  ├── requirements.txt            # Dependências do Python
+  │
+  └── src/                        # Código-fonte principal
+      ├── main.py                 # Script principal que orquestra o fluxo de execução
+      │
+      ├── models/
+      │   └── model_config.py     # Define os modelos e seus hiperparâmetros
+      │
+      ├── training/
+      │   └── train_models.py     # Lógica de treino, avaliação e logging via MLflow
+      │
+      └── utils/                  # Funções auxiliares
+          ├── helpers.py          # Funções utilitárias
+          ├── predict_and_save.py # Predição com dados de teste e salvamento de resultados na pasta data
+          └── preprocessing.py    # Pré-processamento dos dados
+  </pre>
+
+</div>
+
+<br>
+
+<div>
   <h2>🏆 Melhores Resultados de Cada Modelo</h2>
 
   <table>
@@ -114,6 +147,8 @@
   ```
   
   3 - Espere o treinamento do modelo (+ / - 12m): 
+
+  * É possível diminuir o tempo necessário alterando o "n_iter" e "cv" da RandomizedSearchCV para baixo, com a consequência da piora dos resultados.
   
   
   4 - Abra o servidor do Mlflow no navegador para ver todo os experimentos:
