@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/models/m-bc1760b9c9fc4fd2bc64362ed43ab7dd/artifacts
+creation_timestamp: 1753202356735
+experiment_id: '481991040963235767'
+last_updated_timestamp: 1753202359079
+model_id: m-bc1760b9c9fc4fd2bc64362ed43ab7dd
+model_type: ''
+name: model
+source_run_id: 0834d7bbc1234c1ab73e50c88e29c518
+status: 2
+status_message: null

@@ -22,3 +22,5 @@ services:
       - MLFLOW_TRACKING_URI=http://mlflow:5000
     working_dir: /app
     command: /bin/sh -c "sleep 10 && python main.py"
+    volumes:
+      - ./data:/app/data

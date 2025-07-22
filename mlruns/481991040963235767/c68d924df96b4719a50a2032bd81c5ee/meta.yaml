@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/caioc/Projects/flight_price_project/mlruns/481991040963235767/c68d924df96b4719a50a2032bd81c5ee/artifacts
+end_time: 1753202261582
+entry_point_name: ''
+experiment_id: '481991040963235767'
+lifecycle_stage: active
+run_id: c68d924df96b4719a50a2032bd81c5ee
+run_name: GradientBoosting
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753201999265
+status: 3
+tags: []
+user_id: root
