@@ -2,20 +2,17 @@ import numpy as np
 import mlflow
 import mlflow.sklearn
 
-from mlflow.models.signature import infer_signature
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import RandomizedSearchCV
 
 def train_models(models, X_train, X_test, y_train, y_test):
-  mlflow.set_experiment("Flight_Price")
   for model_name, info in models.items():
     print(f"\nTraining: {model_name}")
-
     with mlflow.start_run(run_name=model_name):
       search = RandomizedSearchCV(
           estimator=info['model'],
           param_distributions=info['params'],
-          n_iter=100,
+          n_iter=150,
           cv=7,
           n_jobs=-1,
           scoring='neg_root_mean_squared_error',
@@ -37,12 +34,8 @@ def train_models(models, X_train, X_test, y_train, y_test):
       mlflow.log_metric("rmse", rmse)
       mlflow.log_metric("mae", mae)
       mlflow.log_metric("r2", r2)
-      signature = infer_signature(X_train, best_model.predict(X_train))
-      input_example = X_train.iloc[:5]
-
       mlflow.sklearn.log_model(
-          sk_model=best_model,
-          name=model_name.lower(),
-          signature=signature,
-          input_example=input_example
+        sk_model=best_model,
+        name="model",
+        input_example=X_train
       )

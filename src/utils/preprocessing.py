@@ -1,8 +1,7 @@
 from . import helpers as utils
 import pandas as pd
 
-def preprocess(dataframe):
-    df = dataframe.copy()
+def preprocess_base(df):
     df.dropna(inplace=True)
 
     df['Journey_Day'] = pd.to_datetime(df['Date_of_Journey'], dayfirst=True, errors='coerce').dt.day
@@ -36,17 +35,20 @@ def preprocess(dataframe):
 
     df.drop(['Route', 'Additional_Info'], axis=1, inplace=True)
 
-    Q1 = df['Price'].quantile(0.25)
-    Q3 = df['Price'].quantile(0.75)
-    IQR = Q3 - Q1
-    lower_limit = Q1 - 1.5 * IQR
-    upper_limit = Q3 + 1.5 * IQR
-
-    df = df[(df['Price'] >= lower_limit) & (df['Price'] <= upper_limit)]
-
     df = pd.get_dummies(df, drop_first=True)
 
     int_cols = df.select_dtypes(include=['int64']).columns
     df[int_cols] = df[int_cols].astype('float64')
 
+    return df
+
+def preprocess_train(df):
+    df = preprocess_base(df)
+    if 'Price' in df.columns:
+        Q1 = df['Price'].quantile(0.25)
+        Q3 = df['Price'].quantile(0.75)
+        IQR = Q3 - Q1
+        lower_limit = Q1 - 1.5 * IQR
+        upper_limit = Q3 + 1.5 * IQR
+        df = df[(df['Price'] >= lower_limit) & (df['Price'] <= upper_limit)]
     return df
