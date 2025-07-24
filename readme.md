@@ -134,13 +134,13 @@
 
   <p>Siga os passos abaixo para executar o projeto localmente:</p>
 
-  1 - Clone esse repositório em sua máquina local:
+  1 - Clone esse repositório:
   
   ```
   git clone https://github.com/CaioCesarMDS/FligthPrice-ML.git
   ```
   
-  2 - Suba o container com docker:
+  2 - Suba os containers com docker:
   
   ```
   docker compose up --build
