@@ -1,7 +1,5 @@
 <h1>✈️ FlightPrice - Machine Learning</h1>
 
-<h2>Discentes: Caio Cesar, Rodrigo Sena e Vitor Otávio</h2>
-
 <br>
 
 <div>
@@ -172,3 +170,4 @@
     <li>Docker</li>
   </ul>
 </div>
+
